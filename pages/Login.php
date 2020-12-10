@@ -33,26 +33,27 @@ if ($_POST) {
     session_start(); //permite o uso de sessões.
     include "Connection.php";
 
-    //Acessando(POST) as variaveis de form HTML e jogando nas variaveis PHP
     $emailUser = $_POST['HTML_email'];
-    $passwordUser = ($_POST['HTML_password']); //criptografia md5
+    $passwordUser = $_POST['HTML_password'];
             
 
-    //montagem da instrução SQL para o login (variaveis PHP)
     $sqlLogin = "Select * from $user where email like '$emailUser' and ";
     $sqlLogin .= "Password like '$passwordUser'";
 
 
-    //executando o SELECT e armazenando o retorno em um resultSet (rs)
     $rsLogin = mysqli_query($vConn, $sqlLogin) or die(mysqli_error($vConn));
 
 
-    //mysqli_num_rows (retorna o numero de registros do select)
     if(mysqli_num_rows($rsLogin) > 0){
-        //abertura do resultSet para acesso aos dados
         $loginData = mysqli_fetch_array($rsLogin);
         
         //Abrindo sessão
+        if ($user == 'candidates') {
+            $_SESSION['id'] = $loginData['idCandidates'];
+        } else if ($user == 'companies') {
+            $_SESSION['id'] = $loginData['idCompany'];
+        }
+
         $_SESSION['name'] = $loginData['name'];
         $_SESSION['loginTime'] = "Acesso em " . date("d/m/Y") . " às " . date("h:i:s");
         $_SESSION['permission'] = $loginData['permission'];    

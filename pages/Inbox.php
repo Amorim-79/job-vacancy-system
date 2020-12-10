@@ -36,16 +36,19 @@
                 <div class="card-body row">
                     <div class="mb-4 col-12">
                         <h5 class="card-title">Nome da Empresa</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>
                     <div class="mb-4 col-12 bg-white">
                         <h5 class="card-title">Nome da Empresa</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>
                     <div class="mb-4 col-12">
                         <h5 class="card-title">Nome da Empresa</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>
@@ -88,16 +91,19 @@
                 <div class="card-body row">
                     <div class="mb-4 col-12">
                         <h5 class="card-title">Nome do candidato</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>
                     <div class="mb-4 col-12 bg-white">
                         <h5 class="card-title">Nome do candidato</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>
                     <div class="mb-4 col-12">
                         <h5 class="card-title">Nome do candidato</h5>
+                        <h5 class="card-text small float-right">10/12/2020</h5>
                         <p class="card-text small">Corpo da mensagem.</p>
                         <a href="#" class="btn btn-primary">Responder</a>
                     </div>

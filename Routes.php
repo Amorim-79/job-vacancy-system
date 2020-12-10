@@ -18,7 +18,16 @@
     } else if ($user === 'candidates' && $screen === 'inbox') {
         $table = 'candidates';
         include 'pages/Inbox.php';
-    
+    }  else if ($user === 'candidates' && $screen === 'vacancy') {
+        $table = 'candidates';
+        include 'pages/Vacancy.php';
+    } else if ($user === 'candidates' && $screen === 'yourVacancy') {
+        $table = 'candidates';
+        include 'pages/YourVacancy.php';
+    } else if ($user === 'candidates' && $screen === 'listVacancy') {
+        $table = 'candidates';
+        include 'pages/ListVacancy.php';
+
     // Company
     } else if ($user === 'companies' && $screen === 'login') {
         $table = 'companies';
@@ -35,5 +44,14 @@
     } else if ($user === 'companies' && $screen === 'inbox') {
         $table = 'companies';
         include 'pages/Inbox.php';
+    } else if ($user === 'companies' && $screen === 'vacancy') {
+        $table = 'companies';
+        include 'pages/Vacancy.php';
+    } else if ($user === 'companies' && $screen === 'createVacancy') {
+        $table = 'companies';
+        include 'pages/CreateVacancy.php';
+    } else if ($user === 'companies' && $screen === 'listVacancy') {
+        $table = 'companies';
+        include 'pages/ListVacancy.php';
     }
 ?>
