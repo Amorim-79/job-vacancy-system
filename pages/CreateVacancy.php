@@ -55,7 +55,7 @@
                         <input type="hidden" name="data[1]" value="<?=$_SESSION['id'];?>">
                         <input type="hidden" name="user" value="<?=$user?>">
                         <input type="hidden" name="table" value="vacancies">
-                        <button type="submit" class="btn btn-primary float-right">Enviar</button>
+                        <button type="submit" class="btn btn-primary float-right">Salvar</button>
                     </div>
                 </form>
             </div>

@@ -13,16 +13,16 @@
     </head>
     
     <body>
-        <div class="container mt-3 mb-3">
+        <div class="container-fluid w-75 mt-3 mb-3">
             <?php
                 if (!isset($_GET["user"])) { //se a variavel URL user nao existir (monta a landing page)            
             ?>
 
                 <div class="row justify-content-md-center">
-                <h1 class="mb-5 font-weight-bold text-white">Employment Opportunities</h1>
+                <h1 class="mb-5 font-weight-bold text-white col-12 text-center">Employment Opportunities</h1>
                 <img class="img-fluid" src="img/undraw_job_offers_kw5d.svg" alt="Landing logo">
                 </div>
-                <div class="row justify-content-between mt-5">
+                <div class="row justify-content-around mt-3">
                     <a href="index.php?user=candidates&screen=login" class="btn btn-lg btn-primary">Entrar como candidato</a>
                     <a href="index.php?user=companies&screen=login" class="btn btn-lg btn-light">Entrar como empresa</a>
                 </div>

@@ -50,8 +50,5 @@
     } else if ($user === 'companies' && $screen === 'createVacancy') {
         $table = 'companies';
         include 'pages/CreateVacancy.php';
-    } else if ($user === 'companies' && $screen === 'listVacancy') {
-        $table = 'companies';
-        include 'pages/ListVacancy.php';
     }
 ?>

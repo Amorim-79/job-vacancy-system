@@ -50,12 +50,13 @@ if ($_POST) {
         //Abrindo sessão
         if ($user == 'candidates') {
             $_SESSION['id'] = $loginData['idCandidates'];
+            $_SESSION['interest'] = $loginData['interest'];
         } else if ($user == 'companies') {
             $_SESSION['id'] = $loginData['idCompany'];
         }
 
         $_SESSION['name'] = $loginData['name'];
-        $_SESSION['loginTime'] = "Acesso em " . date("d/m/Y") . " às " . date("h:i:s");
+        $_SESSION['loginTime'] = "Acesso em " . date("d/m/Y") . " às " . date("H:i:s");
         $_SESSION['permission'] = $loginData['permission'];    
         $_SESSION['statusLogin'] = 1;
         

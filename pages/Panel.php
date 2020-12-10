@@ -1,8 +1,11 @@
 <?php
     session_start();
     include 'components/NavBar.php';
+    include 'GetData.php';
 
     if ($user === 'candidates') {
+        
+        $rsVacanciesRecommended = listVacancyRecommended($vConn, $_SESSION['interest']); // Retorno de vagas da tabela vacancies como mesmo interesse do candidato
 ?>
 
 <div class="container-fluid">
@@ -20,34 +23,37 @@
         <div class="card m-3 col-sm-5 h-50 shadow">
             <div class="card-body">
                 <h5 class="card-title font-weight-bold text-center">Pesquisar vagas</h5>
-                <p class="card-text small">Procurar vagas de acordo com a área de interesse.</p>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Área de interesse" aria-label="Área de interesse">
-                    <div class="input-group-append">
-                        <a href="index.php?user=<?=$user?>&screen=listVacancy" class="btn btn-outline-primary" type="button">Buscar</a>
+                <form action="index.php?user=<?=$user?>&screen=listVacancy" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="params" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
         <div class="card m-3 shadow">
-            <h5 class="card-header font-weight-bold text-center">Vagas Recomendadas para você</h5>
+            <h5 class="card-header font-weight-bold text-center">Vagas Recomendadas pra você</h5>
             <div class="card-body row justify-content-between">
-                <div class="m-2 col-sm-5">
-                    <h5 class="card-title">Dev Frontend</h5>
-                    <p class="card-text">Atuar com desenvolvimento frontend.</p>
-                    <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=false" class="btn btn-primary">Visualizar</a>
-                </div>
-                <div class="m-2 col-sm-5">
-                    <h5 class="card-title">Dev Frontend</h5>
-                    <p class="card-text">Atuar com desenvolvimento frontend.</p>
-                    <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=false" class="btn btn-primary">Visualizar</a>
-                </div>
-                <div class="m-2 col-sm-5">
-                    <h5 class="card-title">Dev Frontend</h5>
-                    <p class="card-text">Atuar com desenvolvimento frontend.</p>
-                    <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=false" class="btn btn-primary">Visualizar</a>
-                </div>
+
+                <?php
+                    while($tblVacanciesRecommended = mysqli_fetch_array($rsVacanciesRecommended)){
+                ?>
+                    <div class="card m-3 col-sm-5 shadow-sm border" style="height: 250px;">
+                        <div class="card-body" style="height: 250px;">
+                            <h5 class="card-title"><?=$tblVacanciesRecommended[2]?></h5>
+                            <p class="card-text text-truncate"><?=$tblVacanciesRecommended[3]?></p>
+                        </div>
+                        <div class="card-footer row justify-content-between">
+                            <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesRecommended[6]?>/<?=$tblVacanciesRecommended[7]?></p>
+                            <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=false&id=<?=$tblVacanciesRecommended[0]?>" class="btn btn-primary float-right">Visualizar</a>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>
@@ -55,6 +61,7 @@
 
 <?php
     } else {
+        $rsVacanciesCompany = listVacancyCompany($vConn, $_SESSION['id']); // Retorno de vagas da tabela vacancies
 ?>
     <div class="container-fluid">
         <div class="row justify-content-md-center rounded bg-light shadow p-2">
@@ -71,32 +78,24 @@
             <div class="card m-3 shadow">
                 <h5 class="card-header font-weight-bold text-center">Vagas Divulgadas</h5>
                 <div class="card-body row justify-content-between">
-                    <div class="m-2 col-sm-5">
-                        <h5 class="card-title">Dev Frontend</h5>
-                        <p class="card-text medium">Atuar com desenvolvimento frontend.</p>
-                        <p class="card-text small">Quantidade de candidatos aplicados: 20/50</p>
-                        <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=true" class="btn btn-primary">Visualizar</a>
-                    </div>
-                    <div class="m-2 col-sm-5">
-                        <h5 class="card-title">Dev Frontend</h5>
-                        <p class="card-text">Atuar com desenvolvimento frontend.</p>
-                        <p class="card-text small">Quantidade de candidatos aplicados: 20/50</p>
-                        <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=true" class="btn btn-primary">Visualizar</a>
-                    </div>
-                    <div class="m-2 col-sm-5">
-                        <h5 class="card-title">Dev Frontend</h5>
-                        <p class="card-text">Atuar com desenvolvimento frontend.</p>
-                        <p class="card-text small">Quantidade de candidatos aplicados: 20/50</p>
-                        <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=true" class="btn btn-primary">Visualizar</a>
-                    </div>
+
+                    <?php
+                        while($tblVacanciesCompany = mysqli_fetch_array($rsVacanciesCompany)){
+                    ?>
+                        <div class="card m-3 col-sm-5 shadow-sm border" style="height: 250px;">
+                            <div class="card-body" style="height: 250px;">
+                                <h5 class="card-title"><?=$tblVacanciesCompany[2]?></h5>
+                                <p class="card-text text-truncate"><?=$tblVacanciesCompany[3]?></p>
+                            </div>
+                            <div class="card-footer row justify-content-between">
+                                <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesCompany[6]?>/<?=$tblVacanciesCompany[7]?></p>
+                                <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=true&id=<?=$tblVacanciesCompany[0]?>" class="btn btn-primary float-right">Visualizar</a>
+                            </div>
+                        </div>
+                    <?php
+                        }
+                    ?>
                 </div>
-                <div class="card-footer">
-                    <a href="index.php?user=<?=$user?>&screen=listVacancy" class="card-text float-right p-2">
-                        Ver todas 
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
             </div>
         </div>
     </div>
