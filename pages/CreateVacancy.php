@@ -17,13 +17,13 @@
                     <div class="row mb-2">
                         <div class="form-group col-12">
                             <label>Cargo: </label>
-                            <input type="text" class="form-control" placeholder="Cargo" name="data[2]">
+                            <input type="text" class="form-control" placeholder="Cargo" name="data[3]">
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="col-6 form-group">
                             <label>Área: </label>
-                            <select class="form-control" name="data[5]">
+                            <select class="form-control" name="data[6]">
                                 <?php
                                     while($tblCategories = mysqli_fetch_array($rsCategories)){
                                 ?>
@@ -36,23 +36,24 @@
                         </div>
                         <div class="col-6 form-group">
                             <label>Salário: </label>
-                            <input type="number" class="form-control" placeholder="Salário" name="data[4]">
+                            <input type="number" class="form-control" placeholder="Salário" name="data[5]">
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="form-group col-12">
-                            <textarea class="form-control" rows="15" style="resize: none; line-height: 20px; font-size: 14px;" maxlength="1000" placeholder="Descrição da vaga" name="data[3]"></textarea>
+                            <textarea class="form-control" rows="15" style="resize: none; line-height: 20px; font-size: 14px;" maxlength="1000" placeholder="Descrição da vaga" name="data[4]"></textarea>
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="form-group col-6">
                             <label>Máx. de candidatos permitidos: </label>
-                            <input type="number" class="form-control" placeholder="Nº de vagas" name="data[6]">
+                            <input type="number" class="form-control" placeholder="Nº de vagas" name="data[7]">
                         </div>
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="data[0]" value=" ">
                         <input type="hidden" name="data[1]" value="<?=$_SESSION['id'];?>">
+                        <input type="hidden" name="data[2]" value="<?=$_SESSION['name'];?>">
                         <input type="hidden" name="user" value="<?=$user?>">
                         <input type="hidden" name="table" value="vacancies">
                         <button type="submit" class="btn btn-primary float-right">Salvar</button>

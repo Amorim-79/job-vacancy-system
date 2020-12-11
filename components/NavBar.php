@@ -28,7 +28,7 @@
         </div> 
         
         <div class="navbar-nav col-lg-1 justify-content-md-center">
-            <a href="index.php" class="text-light">                
+            <a href="Logout.php" class="text-light">                
                 <font class="m-2">
                     <i class="fa fa-sign-out fa-2x"></i>                    
                 </font>

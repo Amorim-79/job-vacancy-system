@@ -3,7 +3,10 @@
         <div class="col-lg-8 border p-3 rounded bg-light shadow">
                     
             <?php
-                if ($user === 'candidate') {
+                if ($user === 'candidates') {
+                    include 'GetData.php';
+                    $rsCategories = listData($vConn, 'categories'); // Retorno da tabela de categorias
+
             ?>
                     <form action="InsertData.php" method="post">
                         <h4 class="text-center font-weight-bold mt-3">Cadastrar-se</h4>                     
@@ -24,22 +27,29 @@
                             </div>
                         </div>
                         <div class="row mb-2">
-                            <div class="col-lg-6 form-group">
+                            <div class="col-lg-5 form-group">
                                 <label>Gênero: </label>
                                 <select name="data[11]" class="form-control">
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
                                 </select>
                             </div>
-                            <div class="col-lg-6 form-group">
+                            <div class="col-lg-2 form-group">
                                 <label>Idade: </label>
                                 <input type="text" name="data[10]" class="form-control" maxlength="3">
                             </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-12">
+                            <div class="col-lg-5">
                                 <label>Área de Interesse: </label>
-                                <input type="text" name="data[12]" class="form-control" maxlength="30">
+                                <select class="form-control" name="data[12]">
+                                    <?php
+                                        while($tblCategories = mysqli_fetch_array($rsCategories)){
+                                            ?>
+                                    <option value="<?=$tblCategories[0]?>"><?=$tblCategories[1]?></option>
+                                    
+                                    <?php
+                                        }
+                                        ?>
+                            </select>      
                             </div>
                         </div>
                         <div class="row mb-2">

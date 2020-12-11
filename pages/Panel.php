@@ -40,18 +40,20 @@
 
                 <?php
                     while($tblVacanciesRecommended = mysqli_fetch_array($rsVacanciesRecommended)){
+                        if ($tblVacanciesRecommended[8] < $tblVacanciesRecommended[7]) {
                 ?>
                     <div class="card m-3 col-sm-5 shadow-sm border" style="height: 250px;">
                         <div class="card-body" style="height: 250px;">
-                            <h5 class="card-title"><?=$tblVacanciesRecommended[2]?></h5>
-                            <p class="card-text text-truncate"><?=$tblVacanciesRecommended[3]?></p>
+                            <h5 class="card-title"><?=$tblVacanciesRecommended[3]?></h5>
+                            <p class="card-text text-truncate"><?=$tblVacanciesRecommended[4]?></p>
                         </div>
                         <div class="card-footer row justify-content-between">
-                            <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesRecommended[6]?>/<?=$tblVacanciesRecommended[7]?></p>
+                            <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesRecommended[8]?>/<?=$tblVacanciesRecommended[7]?></p>
                             <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=false&id=<?=$tblVacanciesRecommended[0]?>" class="btn btn-primary float-right">Visualizar</a>
                         </div>
                     </div>
                 <?php
+                        }
                     }
                 ?>
             </div>
@@ -84,11 +86,11 @@
                     ?>
                         <div class="card m-3 col-sm-5 shadow-sm border" style="height: 250px;">
                             <div class="card-body" style="height: 250px;">
-                                <h5 class="card-title"><?=$tblVacanciesCompany[2]?></h5>
-                                <p class="card-text text-truncate"><?=$tblVacanciesCompany[3]?></p>
+                                <h5 class="card-title"><?=$tblVacanciesCompany[3]?></h5>
+                                <p class="card-text text-truncate"><?=$tblVacanciesCompany[4]?></p>
                             </div>
                             <div class="card-footer row justify-content-between">
-                                <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesCompany[6]?>/<?=$tblVacanciesCompany[7]?></p>
+                                <p class="card-text small float-left">Quantidade de candidatos aplicados: <?=$tblVacanciesCompany[8]?>/<?=$tblVacanciesCompany[7]?></p>
                                 <a href="index.php?user=<?=$user?>&screen=vacancy&readonly=true&id=<?=$tblVacanciesCompany[0]?>" class="btn btn-primary float-right">Visualizar</a>
                             </div>
                         </div>
