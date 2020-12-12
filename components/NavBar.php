@@ -17,6 +17,15 @@
                     Mensagens
                 </font>
             </a>
+        </div>
+
+        <div class="navbar-nav col-lg-3 justify-content-md-center">
+            <a href="?user=<?=$user?>&screen=myPerfil" class="text-light">
+                <font class="m-3">
+                <i class="fa fa-user fa-md"></i>
+                    Alterar meus dados
+                </font>
+            </a>
         </div>  
         
         <div class="col-lg-3 justify-content-md-center text-white text-center">

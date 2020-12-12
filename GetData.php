@@ -21,9 +21,9 @@ function listInputs($vConn, $table){
 
 /*----------------------------------------------------------------------------*/
 
-function listVacancyCompany($vConn, $Id){
+function listVacancyCompany($vConn, $id){
     
-    $sqlData = "Select * from vacancies where idCompany like '$Id'";
+    $sqlData = "Select * from vacancies where idCompany like '$id'";
     $rsData = mysqli_query($vConn, $sqlData) or die(mysqli_error($vConn));
     
     return $rsData;
@@ -133,7 +133,27 @@ function listMessagesCandidate($vConn, $idCandidate){
 
 function getVacancyById($vConn, $id){
     
-    $sqlData = "Select * from vacancies where idVacancy like '$id'";
+    $sqlData = "Select vacancies.*, companies.city, companies.uf, companies.country, companies.address, companies.postalCode from vacancies, companies where vacancies.idVacancy like '$id' and companies.idCompany like vacancies.idCompany";
+    $rsData = mysqli_query($vConn, $sqlData) or die(mysqli_error($vConn));
+    
+    return $rsData;
+}
+
+/*----------------------------------------------------------------------------*/
+
+function getCompanyById($vConn, $id){
+    
+    $sqlData = "Select * from companies where idCompany like '$id'";
+    $rsData = mysqli_query($vConn, $sqlData) or die(mysqli_error($vConn));
+    
+    return $rsData;
+}
+
+/*----------------------------------------------------------------------------*/
+
+function getCandidateById($vConn, $id){
+    
+    $sqlData = "Select * from candidates where idCandidates like '$id'";
     $rsData = mysqli_query($vConn, $sqlData) or die(mysqli_error($vConn));
     
     return $rsData;

@@ -18,6 +18,11 @@
         include 'pages/Panel.php';
         include 'SecurityCandidate.php';
 
+    }  else if ($user === 'candidates' && $screen === 'myPerfil') {
+        $table = 'candidates';
+        include 'pages/MyPerfil.php';
+        include 'SecurityCandidate.php';
+
     } else if ($user === 'candidates' && $screen === 'inbox') {
         $table = 'candidates';
         include 'pages/Inbox.php';
@@ -47,6 +52,11 @@
     } else if ($user === 'companies' && $screen === 'panel') {
         $table = 'companies';
         include 'pages/Panel.php';
+        include 'SecurityCompany.php';
+        
+    }  else if ($user === 'companies' && $screen === 'myPerfil') {
+        $table = 'companies';
+        include 'pages/MyPerfil.php';
         include 'SecurityCompany.php';
         
     } else if ($user === 'companies' && $screen === 'inbox') {

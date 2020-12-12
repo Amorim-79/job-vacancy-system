@@ -19,6 +19,7 @@
                 <div class="card-body shadow-sm h-100 col-12">
                     <h5 class="card-title text-center"><?=$tblVacancy['nameCompany']?></h5>
                     <p class="card-text text-right mr-5">Salário: R$<?=$tblVacancy['salary']?></p>
+                    <p class="card-text text-left">Endereço: <?=$tblVacancy['address']?>, <?=$tblVacancy['city']?> - <?=$tblVacancy['uf']?>, <?=$tblVacancy['country']?>, <?=$tblVacancy['postalCode']?></p>
                     <p class="card-text"><?=$tblVacancy['description']?></p>
                 </div>
                 <div class="card-footer">
@@ -53,6 +54,7 @@
                 <div class="card-body col-12">
                     <h5 class="card-title text-center"><?=$tblVacancy['nameCompany']?></h5>
                     <p class="card-text text-right mr-5">Salário: R$<?=$tblVacancy['salary']?></p>
+                    <p class="card-text text-left">Endereço: <?=$tblVacancy['address']?>, <?=$tblVacancy['city']?> - <?=$tblVacancy['uf']?>, <?=$tblVacancy['country']?>, <?=$tblVacancy['postalCode']?></p>
                 </div>
                 <div class="card-body mb-2 shadow-sm col-12">
                     <p class="card-text"><?=$tblVacancy['description']?></p>
@@ -69,12 +71,24 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Telefone</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Gênero</th>
+                                <th scope="col">Endereço</th>
+                                <th scope="col">Cidade</th>
+                                <th scope="col">UF</th>
+                                <th scope="col">País</th>
                             </tr>
                             <tr>
                                 <th scope="row"><?=$tblCandidatesVacancies[0]?></th>
-                                <td><?=$tblCandidatesVacancies[1]?></td>
-                                <td><?=$tblCandidatesVacancies[2]?></td>
-                                <td><?=$tblCandidatesVacancies[4]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[1]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[2]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[4]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[10]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[11]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[8]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[5]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[6]?></td>
+                                <td scope="row"><?=$tblCandidatesVacancies[7]?></td>
                             </tr>
                     </table>
                     <?php
