@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: Dez 11, 2020 as 06:57 AM
+-- Tempo de Geração: Dez 12, 2020 as 01:11 AM
 -- Versão do Servidor: 5.1.54
 -- Versão do PHP: 5.3.5
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `candidates` (
 --
 
 INSERT INTO `candidates` (`idCandidates`, `name`, `email`, `password`, `phone`, `city`, `uf`, `country`, `address`, `postalCode`, `age`, `genre`, `interest`, `permission`) VALUES
-(1, 'Nova 1', 'nova@nova.com', '12345', '11888888888', 'MIGRACAO', 'SP', 'Brasil', 'R MIGRACAO', '99999-999', 23, 'M', '1', 'candidate'),
+(1, 'Nova Testada', 'nova@nova.com', '12345', '11888888885', 'MIGRACAO', 'SP', 'Brasil', 'R MIGRACAO', '99999-999', 23, 'M', '1', 'candidate'),
 (2, 'Nova 1', 'nova2@nova2.com', '12345', '11888888888', 'MIGRACAO', 'SP', 'Brasil', 'R MIGRACAO', '99999-999', 23, 'M', '1', 'candidate'),
 (5, 'Candidato ultima', 'nova3@nova3.com', '123456', '11888888888', 'MIGRACAO', 'SP', 'Brasil', 'R MIGRACAO', '99999-999', 25, 'F', '2', 'candidate'),
 (7, 'Candidato ultima', 'nova3@nova4.com', '12345678', '11888888888', 'MIGRACAO', 'SP', 'Brasil', 'R MIGRACAO', '99999-999', 25, 'F', '2', 'candidate'),
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `companies` (
 --
 
 INSERT INTO `companies` (`idCompany`, `name`, `email`, `password`, `phone`, `city`, `uf`, `country`, `address`, `postalCode`, `permission`) VALUES
-(3, 'Empresa UNG', 'empresa@ung.com', '123456', '11922222222', 'Guarulhos', 'SP', 'Brasil', 'Praça teste', '00001-000', 'company');
+(3, 'Empresa UNG 3', 'empresa@ung.com', '123456', '11922222229', 'Guarulhos', 'SP', 'Brasil', 'Praça teste', '00001-000', 'company');
 
 -- --------------------------------------------------------
 
